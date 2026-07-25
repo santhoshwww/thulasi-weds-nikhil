@@ -99,3 +99,37 @@ window.onload = () => {
     pages.forEach(page => page.style.display = "none");
 
 }
+
+// ===============================
+// Falling Flower Petals
+// ===============================
+
+const petals = document.getElementById("petals");
+
+function createPetal(){
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.innerHTML = "🌸";
+
+    petal.style.left = Math.random()*100+"vw";
+
+    petal.style.animationDuration =
+        (5 + Math.random()*6) + "s";
+
+    petal.style.fontSize =
+        (15 + Math.random()*20) + "px";
+
+    petals.appendChild(petal);
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },11000);
+
+}
+
+setInterval(createPetal,350);
