@@ -1,6 +1,6 @@
-/* ===========================
-   GLOBAL
-=========================== */
+/* ==========================================
+   RESET
+========================================== */
 
 *{
     margin:0;
@@ -13,336 +13,848 @@ html{
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#fff8ef;
-    color:#fff;
+
+    background:#F8F2E9;
+    color:#333;
     overflow-x:hidden;
+
+    font-family:'Poppins',sans-serif;
+
 }
 
-/* ===========================
-   LANDING PAGE
-=========================== */
+/* ==========================================
+   LOADER
+========================================== */
 
-#landing{
-    height:100vh;
-    background:linear-gradient(rgba(40,0,0,.35),rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-}
+#loader{
 
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.25);
-}
-
-.hero{
-    position:relative;
-    z-index:2;
-    animation:fadeIn 2s ease;
-}
-
-.hero h3{
-    letter-spacing:5px;
-    color:#ffe7a0;
-}
-
-.hero h1{
-    font-size:70px;
-    font-family:'Cinzel',serif;
-    margin:15px 0;
-    color:#fff;
-}
-
-.hero p{
-    font-size:22px;
-    color:#f4f4f4;
-}
-
-/* ===========================
-   COUPLE
-=========================== */
-
-.holding-hands{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:40px;
-    margin:60px 0;
-}
-
-.person{
-    font-size:80px;
-    animation:float 3s infinite ease-in-out;
-}
-
-.heart{
-    font-size:45px;
-    animation:pulse 1.2s infinite;
-}
-
-/* ===========================
-   BUTTON
-=========================== */
-
-#openInvitation{
-    padding:18px 45px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(90deg,#c79a2d,#ffd76c);
-    color:#4d0000;
-    font-weight:bold;
-    font-size:20px;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 0 25px rgba(255,210,60,.5);
-}
-
-#openInvitation:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 40px gold;
-}
-
-/* ===========================
-   MUSIC
-=========================== */
-
-#musicBtn{
     position:fixed;
-    top:20px;
-    right:20px;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    border:none;
-    background:#fff;
-    font-size:22px;
-    cursor:pointer;
+
+    inset:0;
+
+    background:#F8F2E9;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     z-index:9999;
+
+    transition:.8s;
+
 }
 
-/* ===========================
-   TEMPLE DOORS
-=========================== */
+.loader-content{
 
-#doors{
-    position:fixed;
-    inset:0;
-    display:none;
-    z-index:1000;
+    text-align:center;
+
+    max-width:500px;
+
+    padding:30px;
+
 }
 
-.door{
-    width:50%;
-    height:100%;
-    position:absolute;
-    top:0;
-    background:linear-gradient(#7d3000,#3d1400);
-    border:5px solid #d9b24c;
-    transition:2s ease;
+.loader-content h1{
+
+    margin-top:20px;
+
+    font-size:38px;
+
+    font-family:'Cinzel',serif;
+
+    color:#7B2D26;
+
 }
 
-.left-door{
-    left:0;
+.loader-content p{
+
+    margin-top:20px;
+
+    line-height:1.8;
+
+    color:#666;
+
 }
 
-.right-door{
-    right:0;
+.flower{
+
+    font-size:60px;
+
 }
 
-.open-left{
-    transform:translateX(-100%);
+.loading-spinner{
+
+    width:55px;
+
+    height:55px;
+
+    border:4px solid #E3D7C6;
+
+    border-top:4px solid #B98B54;
+
+    border-radius:50%;
+
+    margin:35px auto;
+
+    animation:spin 1s linear infinite;
+
 }
 
-.open-right{
-    transform:translateX(100%);
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
 }
 
-/* ===========================
-   PAGES
-=========================== */
+/* ==========================================
+   INVITATION
+========================================== */
+
+#invitation{
+
+    width:100%;
+
+}
 
 .page{
-    display:none;
-    min-height:100vh;
-    background:#fff8ef;
-    color:#4b1d00;
-    padding:90px 20px;
+
+    position:relative;
+
+    width:100%;
+
+    background:#F8F2E9;
+
 }
 
-.container{
-    width:90%;
-    max-width:900px;
-    margin:auto;
-    text-align:center;
+.page img{
+
+    width:100%;
+
+    display:block;
+
 }
 
-.container h1{
-    font-family:'Cinzel',serif;
-    color:#8a0b1d;
-    font-size:55px;
-    margin-bottom:20px;
+/* ==========================================
+   SCRATCH CARD
+========================================== */
+
+.scratch-section{
+
+    position:relative;
+
 }
 
-.container h2{
-    color:#b8860b;
-    margin-bottom:20px;
-}
+.scratch-container{
 
-.container h3{
-    margin-top:25px;
-}
+    position:absolute;
 
-.container p{
-    line-height:1.9;
-    font-size:20px;
-    margin:20px 0;
-}
+    left:50%;
 
-.nextBtn,
-.container button{
-    margin-top:35px;
-    padding:15px 40px;
-    border:none;
-    border-radius:40px;
-    background:#8a0b1d;
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
-}
+    top:52%;
 
-.nextBtn:hover,
-.container button:hover{
-    background:#c49b2d;
-    color:black;
-}
+    transform:translate(-50%,-50%);
 
-.coupleImage{
     width:320px;
-    height:320px;
-    margin:40px auto;
-    border-radius:50%;
-    background:#eee;
-    border:8px solid gold;
+
+    height:180px;
+
+}
+
+#scratch-result{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#fffef9;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    overflow:hidden;
+
+}
+
+#scratch-result h2{
+
+    color:#B17835;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:10px;
+
+}
+
+#scratch-result h3{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+#scratch-result p{
+
+    margin:4px;
+
+}
+
+#scratch-result h4{
+
+    margin-top:12px;
+
+    font-size:26px;
+
+    color:#8D2E24;
+
+}
+
+#scratchCanvas{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    cursor:pointer;
+
+    border-radius:18px;
+
+}
+
+/* ==========================================
+   VENUE BUTTON
+========================================== */
+
+.venue-button{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:9%;
+
+    transform:translateX(-50%);
+
+    text-decoration:none;
+
+    background:#B17835;
+
+    color:white;
+
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.2);
+
+}
+
+.venue-button:hover{
+
+    background:#8F6128;
+
+    transform:translateX(-50%) scale(1.05);
+
+}
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+.countdown-box{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:27%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.count-item{
+
+    width:90px;
+
+    height:90px;
+
+    background:white;
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.count-item span{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#8D2E24;
+
+}
+
+.count-item small{
+
+    margin-top:6px;
+
+    color:#555;
+
+}
+
+/* ==========================================
+   RSVP BUTTONS
+========================================== */
+
+.rsvp-buttons{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:8%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.rsvp-buttons button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#yesBtn{
+
+    background:#B17835;
+
+    color:white;
+
+}
+
+#yesBtn:hover{
+
+    transform:translateY(-3px);
+
+    background:#966A30;
+
+}
+
+#noBtn{
+
+    background:white;
+
+    color:#7B2D26;
+
+}
+
+#noBtn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   RSVP POPUP
+========================================== */
+
+.popup{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:30px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:99999;
+
 }
 
-/* ===========================
-   ANIMATIONS
-=========================== */
+.popup.show{
 
-@keyframes fadeIn{
+    opacity:1;
+    visibility:visible;
+
+}
+
+.popup-card{
+
+    position:relative;
+
+    width:90%;
+    max-width:500px;
+
+    background:#FFFDF9;
+
+    border-radius:24px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    animation:popupScale .35s ease;
+
+}
+
+@keyframes popupScale{
+
     from{
+
         opacity:0;
-        transform:translateY(30px);
+        transform:scale(.8);
+
     }
+
     to{
+
         opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
-
-@keyframes pulse{
-    0%{
         transform:scale(1);
+
     }
-    50%{
-        transform:scale(1.3);
-    }
-    100%{
-        transform:scale(1);
-    }
+
 }
 
-/* ===========================
+.popup-card h2{
+
+    font-family:'Cinzel',serif;
+
+    color:#8D2E24;
+
+    margin-bottom:20px;
+
+    font-size:30px;
+
+}
+
+.popup-card p{
+
+    line-height:1.9;
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+#closePopup{
+
+    position:absolute;
+
+    top:15px;
+    right:20px;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    color:#999;
+
+    transition:.3s;
+
+}
+
+#closePopup:hover{
+
+    color:#8D2E24;
+
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+#topButton{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#B17835;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:none;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#topButton:hover{
+
+    transform:translateY(-5px);
+
+    background:#98692C;
+
+}
+
+/* ==========================================
+   IMAGE ENHANCEMENT
+========================================== */
+
+.page{
+
+    overflow:hidden;
+
+}
+
+.page img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1024px){
+
+.scratch-container{
+
+    width:260px;
+
+    height:150px;
+
+}
+
+.count-item{
+
+    width:75px;
+    height:75px;
+
+}
+
+.count-item span{
+
+    font-size:24px;
+
+}
+
+.rsvp-buttons{
+
+    gap:12px;
+
+}
+
+.rsvp-buttons button{
+
+    padding:13px 22px;
+
+    font-size:15px;
+
+}
+
+}
+
+/* ==========================================
    MOBILE
-=========================== */
+========================================== */
 
 @media(max-width:768px){
 
-.hero h1{
-    font-size:42px;
+.loader-content{
+
+    padding:20px;
+
 }
 
-.hero p{
+.loader-content h1{
+
+    font-size:30px;
+
+}
+
+.loader-content p{
+
+    font-size:15px;
+
+}
+
+.scratch-container{
+
+    width:180px;
+    height:110px;
+
+    top:53%;
+
+}
+
+#scratch-result h2{
+
+    font-size:14px;
+
+}
+
+#scratch-result h3{
+
     font-size:18px;
+
 }
 
-.person{
-    font-size:60px;
-}
+#scratch-result h4{
 
-.container h1{
-    font-size:38px;
-}
-
-.container p{
     font-size:17px;
-}
-
-.coupleImage{
-    width:240px;
-    height:240px;
-}
-
-#openInvitation{
-    font-size:18px;
-    padding:15px 30px;
-}
 
 }
 
-/* ==========================
-   FLOWER PETALS
-========================== */
+.countdown-box{
 
-#petals{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:999;
+    gap:8px;
+
+    bottom:23%;
+
 }
 
-.petal{
-    position:absolute;
-    top:-40px;
-    font-size:22px;
-    animation:fall linear forwards;
+.count-item{
+
+    width:55px;
+    height:55px;
+
+    border-radius:12px;
+
 }
 
-@keyframes fall{
+.count-item span{
 
-0%{
-transform:translateY(-20px) rotate(0deg);
-opacity:1;
+    font-size:16px;
+
 }
 
-100%{
-transform:translateY(110vh) rotate(720deg);
-opacity:.3;
+.count-item small{
+
+    font-size:10px;
+
+}
+
+.rsvp-buttons{
+
+    width:90%;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    bottom:5%;
+
+}
+
+.rsvp-buttons button{
+
+    width:100%;
+
+    max-width:280px;
+
+    font-size:14px;
+
+    padding:12px;
+
+}
+
+.venue-button{
+
+    padding:11px 22px;
+
+    font-size:14px;
+
+}
+
+.popup-card{
+
+    padding:35px 25px;
+
+}
+
+.popup-card h2{
+
+    font-size:24px;
+
+}
+
+.popup-card p{
+
+    font-size:15px;
+
+}
+
+#topButton{
+
+    width:45px;
+    height:45px;
+
+    font-size:20px;
+
+    right:18px;
+    bottom:18px;
+
+}
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media(max-width:480px){
+
+.flower{
+
+    font-size:48px;
+
+}
+
+.loader-content h1{
+
+    font-size:24px;
+
+}
+
+.loader-content p{
+
+    font-size:14px;
+
+}
+
+.count-item{
+
+    width:48px;
+    height:48px;
+
+}
+
+.count-item span{
+
+    font-size:15px;
+
+}
+
+.count-item small{
+
+    font-size:9px;
+
+}
+
+}
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media(min-width:1400px){
+
+body{
+
+    background:#F3EEE5;
+
+}
+
+.page{
+
+    max-width:1600px;
+
+    margin:auto;
+
 }
 
 }

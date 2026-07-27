@@ -1,366 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Thulasi ❤️ Nikhil | Wedding Invitation</title>
+
+    <meta name="description"
+        content="Together with our families, we invite you to celebrate our wedding.">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="petals"></div>
+    <!-- ================= Loading Screen ================= -->
 
-<!-- Background Music -->
-<audio id="bgMusic" loop>
-    <source src="assets/music/wedding.mp3" type="audio/mp3">
-</audio>
+    <div id="loader">
 
-<button id="musicBtn">🔊</button>
+        <div class="loader-content">
 
-<!-- ================= LANDING ================= -->
+            <div class="flower">🌸</div>
 
-<section id="landing">
+            <h1>Thulasi ❤️ Nikhil</h1>
 
-<div class="overlay"></div>
+            <p>
+                With the blessings of our families,<br>
+                we invite you to celebrate our wedding.
+            </p>
 
-<div class="hero">
+            <div class="loading-spinner"></div>
 
-<h3>Welcome To</h3>
+        </div>
 
-<h1>Thulasi ❤️ Nikhil</h1>
+    </div>
 
-<p>Two Hearts • One Soul • Forever Begins</p>
+    <!-- ================= Invitation ================= -->
 
-<div class="holding-hands">
+    <main id="invitation">
 
-<div class="person bride">
-👰
-</div>
+        <!-- Hero -->
 
-<div class="heart">
-❤️
-</div>
+        <section class="page">
+            <img src="images/hero.png" alt="Wedding Invitation">
+        </section>
 
-<div class="person groom">
-🤵
-</div>
+        <!-- Ganesha -->
 
-</div>
+        <section class="page">
+            <img src="images/ganesh.png" alt="Lord Ganesha">
+        </section>
 
-<button id="openInvitation">
-Open Our Wedding Invitation
-</button>
+        <!-- Story -->
 
-</div>
+        <section class="page">
+            <img src="images/story.png" alt="Our Story">
+        </section>
 
-</section>
+        <!-- Functions -->
 
-<!-- ================= TEMPLE DOORS ================= -->
+        <section class="page">
+            <img src="images/functions.png" alt="Wedding Functions">
+        </section>
 
-<div id="doors">
+        <!-- Scratch Card -->
 
-<div class="door left-door"></div>
+        <section class="page scratch-section">
 
-<div class="door right-door"></div>
+            <img src="images/scratch.png" alt="Scratch Card">
 
-</div>
+            <div class="scratch-container">
 
-<!-- ================= GANESHA ================= -->
+                <div id="scratch-result">
 
-<section id="ganesha" class="page">
+                    <h2>✨ SAVE THE DATE ✨</h2>
 
-<div class="container">
+                    <h3>28 August 2026</h3>
 
-<h1>🪔</h1>
+                    <p>Friday</p>
 
-<h2>శ్రీ గణేశాయ నమః</h2>
+                    <p>Muhurtham</p>
 
-<p>
+                    <h4>10:18 AM</h4>
 
-వక్రతుండ మహాకాయ<br>
-సూర్యకోటి సమప్రభ ।<br>
-నిర్విఘ్నం కురుమే దేవ<br>
-సర్వకార్యేషు సర్వదా ॥
+                </div>
 
-</p>
+                <canvas id="scratchCanvas"></canvas>
 
-<h3>
+            </div>
 
-With the Blessings of Lord Ganesha
+        </section>
 
-</h3>
+        <!-- Venue -->
 
-<p>
+        <section class="page venue-section">
 
-Together with our families
+            <img src="images/venue.png" alt="Venue">
 
-</p>
+            <a id="mapButton"
+               href="#"
+               target="_blank"
+               class="venue-button">
 
-<h1>
+                View Location
 
-Thulasi ❤️ Nikhil
+            </a>
 
-</h1>
+        </section>
 
-<button class="nextBtn" data-page="story">
+        <!-- Final -->
 
-Next →
+        <section class="page final-section">
 
-</button>
+            <img src="images/final.png" alt="Final">
 
-</div>
+            <!-- Countdown -->
 
-</section>
+            <div class="countdown-box">
 
-<!-- ================= STORY ================= -->
+                <div class="count-item">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
 
-<section id="story" class="page">
+                <div class="count-item">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
 
-<div class="container">
+                <div class="count-item">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
 
-<h1>Our Story</h1>
+                <div class="count-item">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
 
-<div class="coupleImage">
+            </div>
 
-📸 Couple Photo
+            <!-- RSVP -->
 
-</div>
+            <div class="rsvp-buttons">
 
-<p>
+                <button id="yesBtn">
+                    💖 Yes, We'll Be There
+                </button>
 
-Every love story is beautiful,
+                <button id="noBtn">
+                    ❤️ Sorry, Can't Make It
+                </button>
 
-but ours is our favourite.
+            </div>
 
-Today,
+        </section>
 
-we begin forever together.
+    </main>
 
-</p>
+    <!-- RSVP Popup -->
 
-<button class="nextBtn" data-page="mehendi">
+    <div id="popup" class="popup">
 
-Next →
+        <div class="popup-card">
 
-</button>
+            <span id="closePopup">&times;</span>
 
-</div>
+            <h2 id="popupTitle"></h2>
 
-</section>
+            <p id="popupMessage"></p>
 
-<!-- ================= MEHENDI ================= -->
+        </div>
 
-<section id="mehendi" class="page">
+    </div>
 
-<div class="container">
+    <!-- Back to Top -->
 
-<h1>🌿 Mehendi</h1>
+    <button id="topButton">
 
-<h2>24 September</h2>
+        ↑
 
-<p>
+    </button>
 
-Time : 5:00 PM
-
-</p>
-
-<p>
-
-Venue
-
-Sri Lakshmi Gardens
-
-Nellore
-
-</p>
-
-<button class="nextBtn" data-page="nalugu">
-
-Next →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= NALUGU ================= -->
-
-<section id="nalugu" class="page">
-
-<div class="container">
-
-<h1>🌼 Nalugu</h1>
-
-<h2>25 September</h2>
-
-<p>
-
-9:00 AM
-
-</p>
-
-<p>
-
-Family Residence
-
-</p>
-
-<button class="nextBtn" data-page="haldi">
-
-Next →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= HALDI ================= -->
-
-<section id="haldi" class="page">
-
-<div class="container">
-
-<h1>💛 Haldi</h1>
-
-<h2>26 September</h2>
-
-<p>
-
-Morning
-
-8:30 AM
-
-</p>
-
-<button class="nextBtn" data-page="sangeet">
-
-Next →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= SANGEET ================= -->
-
-<section id="sangeet" class="page">
-
-<div class="container">
-
-<h1>🎶 Sangeet</h1>
-
-<h2>26 September</h2>
-
-<p>
-
-7:00 PM
-
-Royal Convention Hall
-
-</p>
-
-<button class="nextBtn" data-page="wedding">
-
-Next →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= WEDDING ================= -->
-
-<section id="wedding" class="page">
-
-<div class="container">
-
-<h1>💍 Wedding</h1>
-
-<h2>28 September</h2>
-
-<p>
-
-Muhurtham
-
-10:18 AM
-
-</p>
-
-<p>
-
-Sri Venkateswara Kalyana Mandapam
-
-Nellore
-
-</p>
-
-<button class="nextBtn" data-page="thanks">
-
-Next →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= THANK YOU ================= -->
-
-<section id="thanks" class="page">
-
-<div class="container">
-
-<h1>
-
-Thank You
-
-</h1>
-
-<p>
-
-Your presence will make our celebration complete.
-
-We look forward to celebrating with you.
-
-</p>
-
-<button>
-
-📍 View Venue
-
-</button>
-
-<button>
-
-📅 Save Date
-
-</button>
-
-<button>
-
-💌 RSVP
-
-</button>
-
-</div>
-
-</section>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
