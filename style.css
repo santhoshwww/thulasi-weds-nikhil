@@ -244,149 +244,6 @@ button{
 
 }
 
-/* ==========================================================
-   VENUE BUTTON
-========================================================== */
-
-.venue-button{
-
-    position:absolute;
-
-    left:50%;
-    bottom:8.8%;
-
-    transform:translateX(-50%);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    min-width:clamp(160px,18vw,240px);
-    height:clamp(42px,3.6vw,56px);
-
-    padding:0 clamp(18px,2vw,32px);
-
-    background:#B17835;
-
-    color:#fff;
-
-    border-radius:999px;
-
-    font-size:clamp(.85rem,1.1vw,1.05rem);
-
-    font-weight:600;
-
-    letter-spacing:.3px;
-
-    white-space:nowrap;
-
-    box-shadow:0 10px 24px rgba(0,0,0,.18);
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
-
-}
-
-.venue-button:hover{
-
-    background:#98692C;
-
-    transform:
-        translateX(-50%)
-        translateY(-3px)
-        scale(1.03);
-
-    box-shadow:0 16px 30px rgba(0,0,0,.22);
-
-}
-
-.venue-button:active{
-
-    transform:
-        translateX(-50%)
-        scale(.98);
-
-}
-
-.venue-button:focus-visible{
-
-    outline:3px solid rgba(177,120,53,.35);
-
-    outline-offset:4px;
-
-}
-
-/* ==========================================================
-   COUNTDOWN
-========================================================== */
-
-.countdown-box{
-
-    position:absolute;
-
-    top:25.1%;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:74%;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    align-items:center;
-
-}
-
-.count-item{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    min-height:clamp(70px,8vw,120px);
-
-}
-
-.count-item span{
-
-    font-family:'Cinzel',serif;
-
-    font-size:clamp(1.2rem,2.4vw,2.4rem);
-
-    font-weight:700;
-
-    color:#5A2C18;
-
-    line-height:1;
-
-    font-variant-numeric:tabular-nums;
-
-}
-
-.count-item small{
-
-    margin-top:clamp(4px,.6vw,10px);
-
-    font-size:clamp(.45rem,.7vw,.75rem);
-
-    font-weight:500;
-
-    color:#6A4B31;
-
-    letter-spacing:.18em;
-
-    text-transform:uppercase;
-
-}
-
 /* Optional subtle animation */
 
 .count-item span{
@@ -415,71 +272,109 @@ button{
 
 }
 
-/* ==========================================================
-   RSVP BUTTONS
-========================================================== */
+/* ==========================================
+   VENUE PAGE
+========================================== */
 
-@media (max-width:768px){
+#venuePage{
 
-    .rsvp-buttons{
-
-        position:absolute;
-
-        left:50%;
-        bottom:7%;
-
-        transform:translateX(-50%);
-
-        width:100%;
-
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-
-        gap:10px;
-
-    }
-
-    .rsvp-buttons button{
-
-        width:220px;
-        height:46px;
-        font-size:15px;
-
-    }
+    position:relative;
 
 }
 
-#yesBtn{
+#venuePage .venue-button{
 
-    background:#B17835;
-    color:#fff;
+    position:absolute;
 
-}
+    left:31.5%;
+    bottom:8.8%;
 
-#yesBtn:hover{
+    transform:translateX(-50%);
 
-    background:#98692C;
+    width:260px;
+    height:52px;
 
-    transform:
-        translateY(-3px)
-        scale(1.02);
+    border-radius:50px;
 
-}
-
-#noBtn{
-
-    background:#fff;
-
-    color:#7B2D26;
+    font-size:17px;
 
 }
 
-#noBtn:hover{
+/* ==========================================
+   FINAL PAGE
+========================================== */
 
-    transform:
-        translateY(-3px)
-        scale(1.02);
+#finalPage{
+
+    position:relative;
+
+}
+
+/* Countdown */
+
+#finalPage .countdown-box{
+
+    position:absolute;
+
+    top:18.5%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:73%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* Numbers */
+
+#finalPage .count-item span{
+
+    font-size:2.7rem;
+
+}
+
+/* Labels */
+
+#finalPage .count-item small{
+
+    font-size:.72rem;
+
+    margin-top:4px;
+
+}
+
+/* RSVP */
+
+#finalPage .rsvp-buttons{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:11%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+#finalPage .rsvp-buttons button{
+
+    width:235px;
+
+    height:48px;
 
 }
 
@@ -672,129 +567,60 @@ button{
 
 @media (max-width:768px){
 
-    /* Countdown */
+/* Venue */
 
-    .countdown-box{
+#venuePage .venue-button{
 
-        top:19.8%;
-        left:50%;
+    left:50%;
 
-        width:82%;
+    bottom:5%;
 
-    }
+    width:210px;
 
-    .count-item span{
+    height:42px;
 
-        font-size:2.2rem;
-
-    }
-
-    .count-item small{
-
-        font-size:.68rem;
-
-        letter-spacing:1px;
-
-    }
-
-    /* Venue Button */
-
-    .venue-button{
-
-        left:50%;
-        bottom:13%;
-
-        transform:translateX(-50%);
-
-        min-width:190px;
-
-        height:44px;
-
-        font-size:.9rem;
-
-    }
-
-    /* RSVP */
-
-    .rsvp-buttons{
-
-        position:absolute;
-
-        left:50%;
-        top:84%;
-
-        transform:translate(-50%,-50%);
-
-        width:100%;
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:10px;
-
-    }
-
-    .rsvp-buttons button{
-
-        width:230px;
-
-        height:48px;
-
-        font-size:.95rem;
-
-    }
-
-    /* Back To Top */
-
-    #topButton{
-
-        width:46px;
-
-        height:46px;
-
-        right:16px;
-
-        bottom:16px;
-
-    }
+    font-size:15px;
 
 }
 
-/* ---------- Small Phones ---------- */
+/* Countdown */
 
-@media (max-width:480px){
+#finalPage .countdown-box{
 
-    .loader-content h1{
+    top:17%;
 
-        font-size:1.7rem;
-
-    }
-
-    .loader-content p{
-
-        font-size:.9rem;
-
-    }
-
-    .flower{
-
-        font-size:3rem;
-
-    }
+    width:84%;
 
 }
 
-/* ---------- Large Desktop ---------- */
+#finalPage .count-item span{
 
-@media (min-width:1600px){
+    font-size:2rem;
 
-    body{
+}
 
-        background:#F3EEE5;
+#finalPage .count-item small{
 
-    }
+    font-size:.6rem;
+
+}
+
+/* RSVP */
+
+#finalPage .rsvp-buttons{
+
+    bottom:4%;
+
+}
+
+#finalPage .rsvp-buttons button{
+
+    width:210px;
+
+    height:44px;
+
+    font-size:15px;
+
+}
 
 }
