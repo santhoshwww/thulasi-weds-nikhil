@@ -196,7 +196,7 @@ body{
 
     position:absolute;
 
-    top:20.1%;
+    top:25.1%;
 
     left:50%;
 
@@ -212,10 +212,6 @@ body{
 
 .count-item{
 
-    width:100%;
-
-    height:160px;
-
     display:flex;
 
     flex-direction:column;
@@ -224,13 +220,7 @@ body{
 
     align-items:center;
 
-    background:transparent;
-
-    border:none;
-
-    border-radius:0;
-
-    box-shadow:none;
+    height:72px;
 
 }
 
@@ -542,7 +532,9 @@ body{
 
 .count-item span{
 
-    font-size:24px;
+    font-size:28px;
+
+    line-height:1;
 
 }
 
@@ -681,27 +673,33 @@ body{
 
 .rsvp-buttons{
 
-    width:90%;
+    position:absolute;
+
+    top:74%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:88%;
+
+    display:flex;
 
     flex-direction:column;
 
     align-items:center;
 
-    gap:10px;
-
-    bottom:5%;
+    gap:12px;
 
 }
 
 .rsvp-buttons button{
 
-    width:100%;
+    width:240px;
 
-    max-width:280px;
+    height:48px;
 
-    font-size:14px;
-
-    padding:12px;
+    font-size:15px;
 
 }
 
@@ -786,9 +784,11 @@ body{
 
 .count-item small{
 
-    margin-top:14px;
+    margin-top:5px;
 
-    font-size:18px;
+    font-size:9px;
+
+    letter-spacing:1px;
 
 }
 
