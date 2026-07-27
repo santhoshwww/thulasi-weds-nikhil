@@ -1,6 +1,6 @@
 /* ==========================================================
+   TULASI ❤️ NIKHIL
    WEDDING INVITATION
-   Responsive CSS
 ========================================================== */
 
 /* ==========================================================
@@ -18,12 +18,19 @@ html{
 }
 
 body{
+
     font-family:'Poppins',sans-serif;
+
     background:#F8F2E9;
+
     color:#333;
+
     overflow-x:hidden;
+
     -webkit-font-smoothing:antialiased;
+
     text-rendering:optimizeLegibility;
+
 }
 
 /* ==========================================================
@@ -31,18 +38,31 @@ body{
 ========================================================== */
 
 img{
-    display:block;
-    max-width:100%;
-    user-select:none;
-    pointer-events:none;
-}
 
-a{
-    text-decoration:none;
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    user-select:none;
+
+    pointer-events:none;
+
 }
 
 button{
+
     font-family:inherit;
+
+    cursor:pointer;
+
+}
+
+a{
+
+    text-decoration:none;
+
 }
 
 /* ==========================================================
@@ -52,10 +72,13 @@ button{
 #loader{
 
     position:fixed;
+
     inset:0;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     background:#F8F2E9;
@@ -73,15 +96,17 @@ button{
 
     text-align:center;
 
-    padding:2rem;
+    padding:30px;
 
 }
 
 .flower{
 
-    font-size:clamp(3rem,6vw,4.5rem);
+    font-size:70px;
 
-    animation:flowerFloat 2.6s ease-in-out infinite;
+    color:#B17835;
+
+    animation:float 2.5s ease-in-out infinite;
 
 }
 
@@ -91,7 +116,7 @@ button{
 
     font-family:'Cinzel',serif;
 
-    font-size:clamp(2rem,4vw,2.8rem);
+    font-size:40px;
 
     color:#7B2D26;
 
@@ -101,25 +126,27 @@ button{
 
     margin-top:18px;
 
-    color:#666;
-
     line-height:1.8;
 
-    font-size:clamp(.95rem,1.2vw,1.05rem);
+    color:#666;
+
+    font-size:16px;
 
 }
 
 .loading-spinner{
 
-    width:58px;
-    height:58px;
+    width:56px;
+
+    height:56px;
 
     margin:28px auto;
 
-    border:4px solid #E3D7C6;
-    border-top-color:#B17835;
-
     border-radius:50%;
+
+    border:4px solid #E3D7C6;
+
+    border-top-color:#B17835;
 
     animation:spin 1s linear infinite;
 
@@ -139,7 +166,7 @@ button{
 
 }
 
-@keyframes flowerFloat{
+@keyframes float{
 
     0%,100%{
 
@@ -149,7 +176,7 @@ button{
 
     50%{
 
-        transform:translateY(-8px);
+        transform:translateY(-10px);
 
     }
 
@@ -161,7 +188,7 @@ button{
 
         opacity:0;
 
-        transform:translateY(30px);
+        transform:translateY(40px);
 
     }
 
@@ -180,18 +207,22 @@ button{
 ========================================================== */
 
 #invitation{
+
     width:100%;
+
 }
 
-/* Every invitation image occupies one full section */
+/* Every image occupies one section */
 
 .page{
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     background:#F8F2E9;
 
@@ -199,7 +230,7 @@ button{
 
 }
 
-/* Responsive artboard */
+/* Artboard */
 
 .page-wrapper{
 
@@ -209,72 +240,107 @@ button{
 
     margin:auto;
 
-}
-
-/* Invitation image */
-
-.page-wrapper img{
-
-    width:100%;
-
-    height:auto;
-
-    display:block;
-
-}
-
-/* Smooth page appearance */
-
-.page-wrapper{
-
     animation:fadeUp .8s ease both;
 
 }
 
-/* Optional shadow for desktop */
+/* Desktop shadow */
 
 @media (min-width:1200px){
 
 .page-wrapper{
 
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.05);
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
 
 }
 
 }
 
-/* Optional subtle animation */
+/* ==========================================================
+   COMMON BUTTON STYLE
+========================================================== */
+
+button,
+.venue-button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#B17835;
+
+    color:#fff;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+button:hover,
+.venue-button:hover{
+
+    background:#98692C;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   COUNTDOWN COMMON
+========================================================== */
+
+.count-item{
+
+    text-align:center;
+
+    color:#7B2D26;
+
+}
 
 .count-item span{
 
-    animation:countFade .8s ease;
+    display:block;
+
+    font-family:'Cinzel',serif;
+
+    font-size:2.7rem;
+
+    font-weight:600;
+
+    animation:fadeUp .5s ease;
 
 }
 
-@keyframes countFade{
+.count-item small{
 
-    from{
+    display:block;
 
-        opacity:0;
+    margin-top:5px;
 
-        transform:translateY(10px);
+    font-size:.75rem;
 
-    }
+    letter-spacing:1px;
 
-    to{
+    text-transform:uppercase;
 
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    color:#555;
 
 }
 
-/* ==========================================
+/* ==========================================================
    VENUE PAGE
-========================================== */
+========================================================== */
 
 #venuePage{
 
@@ -282,27 +348,117 @@ button{
 
 }
 
-#venuePage .venue-button{
+/* Overlay spans the entire image */
+
+#venuePage .venue-overlay{
 
     position:absolute;
 
-    left:31.5%;
-    bottom:8.8%;
+    left:0;
 
-    transform:translateX(-50%);
+    right:0;
 
-    width:260px;
-    height:52px;
+    bottom:6.5%;
 
-    border-radius:50px;
+    display:flex;
 
-    font-size:17px;
+    justify-content:center;
+
+    align-items:center;
 
 }
 
-/* ==========================================
+/* View Location button */
+
+#venuePage .venue-button{
+
+    width:240px;
+
+    height:50px;
+
+    background:#B17835;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+}
+
+#venuePage .venue-button:hover{
+
+    background:#98692C;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   VENUE RESPONSIVE
+========================================================== */
+
+@media (max-width:1024px){
+
+    #venuePage .venue-overlay{
+
+        bottom:5.5%;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    #venuePage .venue-overlay{
+
+        bottom:4%;
+
+    }
+
+    #venuePage .venue-button{
+
+        width:210px;
+
+        height:44px;
+
+        font-size:15px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    #venuePage .venue-overlay{
+
+        bottom:3.5%;
+
+    }
+
+    #venuePage .venue-button{
+
+        width:190px;
+
+        height:42px;
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ==========================================================
    FINAL PAGE
-========================================== */
+========================================================== */
 
 #finalPage{
 
@@ -310,23 +466,41 @@ button{
 
 }
 
-/* Countdown */
+/* ==========================================================
+   COUNTDOWN OVERLAY
+========================================================== */
 
-#finalPage .countdown-box{
+#finalPage .countdown-overlay{
 
     position:absolute;
 
-    top:18.5%;
+    top:18%;
 
-    left:50%;
+    left:0;
 
-    transform:translateX(-50%);
+    right:0;
 
-    width:73%;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Countdown Container */
+
+#finalPage .countdown-box{
+
+    width:72%;
 
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
+
+    align-items:center;
+
+    text-align:center;
 
 }
 
@@ -334,7 +508,13 @@ button{
 
 #finalPage .count-item span{
 
+    font-family:'Cinzel',serif;
+
     font-size:2.7rem;
+
+    font-weight:600;
+
+    color:#7B2D26;
 
 }
 
@@ -342,23 +522,129 @@ button{
 
 #finalPage .count-item small{
 
+    display:block;
+
+    margin-top:6px;
+
     font-size:.72rem;
 
-    margin-top:4px;
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    color:#555;
 
 }
 
-/* RSVP */
+/* ==========================================================
+   TABLET
+========================================================== */
 
-#finalPage .rsvp-buttons{
+@media (max-width:1024px){
+
+    #finalPage .countdown-overlay{
+
+        top:17%;
+
+    }
+
+    #finalPage .countdown-box{
+
+        width:80%;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    #finalPage .countdown-overlay{
+
+        top:16%;
+
+    }
+
+    #finalPage .countdown-box{
+
+        width:88%;
+
+    }
+
+    #finalPage .count-item span{
+
+        font-size:2rem;
+
+    }
+
+    #finalPage .count-item small{
+
+        font-size:.60rem;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    #finalPage .countdown-overlay{
+
+        top:15%;
+
+    }
+
+    #finalPage .countdown-box{
+
+        width:92%;
+
+    }
+
+    #finalPage .count-item span{
+
+        font-size:1.7rem;
+
+    }
+
+    #finalPage .count-item small{
+
+        font-size:.55rem;
+
+    }
+
+}
+
+/* ==========================================================
+   RSVP SECTION
+========================================================== */
+
+#finalPage .rsvp-overlay{
 
     position:absolute;
 
-    left:50%;
+    left:0;
 
-    bottom:11%;
+    right:0;
 
-    transform:translateX(-50%);
+    bottom:8%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* RSVP Button Container */
+
+#finalPage .rsvp-buttons{
 
     display:flex;
 
@@ -366,15 +652,119 @@ button{
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
 }
 
+/* Buttons */
+
 #finalPage .rsvp-buttons button{
 
-    width:235px;
+    width:240px;
 
-    height:48px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#B17835;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+    transition:all .3s ease;
+
+}
+
+/* Hover */
+
+#finalPage .rsvp-buttons button:hover{
+
+    background:#98692C;
+
+    transform:translateY(-3px);
+
+}
+
+/* Active */
+
+#finalPage .rsvp-buttons button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:1024px){
+
+    #finalPage .rsvp-overlay{
+
+        bottom:7%;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    #finalPage .rsvp-overlay{
+
+        bottom:5%;
+
+    }
+
+    #finalPage .rsvp-buttons{
+
+        gap:10px;
+
+    }
+
+    #finalPage .rsvp-buttons button{
+
+        width:210px;
+
+        height:44px;
+
+        font-size:15px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    #finalPage .rsvp-overlay{
+
+        bottom:4%;
+
+    }
+
+    #finalPage .rsvp-buttons button{
+
+        width:190px;
+
+        height:42px;
+
+        font-size:14px;
+
+    }
 
 }
 
@@ -389,15 +779,19 @@ button{
     inset:0;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     background:rgba(0,0,0,.55);
 
     opacity:0;
+
     visibility:hidden;
 
-    transition:.35s;
+    transition:opacity .35s ease,
+               visibility .35s ease;
 
     z-index:99999;
 
@@ -406,9 +800,12 @@ button{
 .popup.show{
 
     opacity:1;
+
     visibility:visible;
 
 }
+
+/* Popup Card */
 
 .popup-card{
 
@@ -420,7 +817,7 @@ button{
 
     border-radius:24px;
 
-    padding:clamp(28px,4vw,45px);
+    padding:40px 30px;
 
     text-align:center;
 
@@ -430,11 +827,14 @@ button{
 
 }
 
+/* Popup Animation */
+
 @keyframes popupScale{
 
     from{
 
         opacity:0;
+
         transform:scale(.9);
 
     }
@@ -442,11 +842,14 @@ button{
     to{
 
         opacity:1;
+
         transform:scale(1);
 
     }
 
 }
+
+/* Title */
 
 .popup-card h2{
 
@@ -454,27 +857,32 @@ button{
 
     color:#8D2E24;
 
-    margin-bottom:20px;
+    font-size:2rem;
 
-    font-size:clamp(1.5rem,2vw,2rem);
+    margin-bottom:18px;
 
 }
+
+/* Message */
 
 .popup-card p{
 
-    line-height:1.8;
-
     color:#555;
 
-    font-size:clamp(.95rem,1vw,1.05rem);
+    line-height:1.8;
+
+    font-size:1rem;
 
 }
+
+/* Close Button */
 
 #closePopup{
 
     position:absolute;
 
-    top:12px;
+    top:14px;
+
     right:18px;
 
     font-size:2rem;
@@ -494,7 +902,35 @@ button{
 }
 
 /* ==========================================================
-   BACK TO TOP
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .popup-card{
+
+        width:92%;
+
+        padding:32px 24px;
+
+    }
+
+    .popup-card h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .popup-card p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* ==========================================================
+   BACK TO TOP BUTTON
 ========================================================== */
 
 #topButton{
@@ -502,10 +938,12 @@ button{
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
-    width:clamp(46px,3vw,54px);
-    height:clamp(46px,3vw,54px);
+    width:52px;
+
+    height:52px;
 
     border:none;
 
@@ -515,17 +953,19 @@ button{
 
     color:#fff;
 
-    font-size:clamp(1.1rem,1.5vw,1.4rem);
-
-    cursor:pointer;
+    font-size:22px;
 
     display:none;
 
-    box-shadow:0 10px 20px rgba(0,0,0,.22);
+    justify-content:center;
 
-    transition:
-        transform .3s ease,
-        background .3s ease;
+    align-items:center;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 22px rgba(0,0,0,.20);
+
+    transition:all .3s ease;
 
     z-index:999;
 
@@ -539,25 +979,9 @@ button{
 
 }
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
+#topButton.show{
 
-/* ---------- Tablets ---------- */
-
-@media (max-width:1024px){
-
-    .page-wrapper{
-        width:100%;
-    }
-
-    .countdown-box{
-        width:76%;
-    }
-
-    .rsvp-buttons{
-        left:68%;
-    }
+    display:flex;
 
 }
 
@@ -567,60 +991,125 @@ button{
 
 @media (max-width:768px){
 
-/* Venue */
+    #topButton{
 
-#venuePage .venue-button{
+        width:46px;
 
-    left:50%;
+        height:46px;
 
-    bottom:5%;
+        right:15px;
 
-    width:210px;
+        bottom:15px;
 
-    height:42px;
+        font-size:20px;
 
-    font-size:15px;
-
-}
-
-/* Countdown */
-
-#finalPage .countdown-box{
-
-    top:17%;
-
-    width:84%;
+    }
 
 }
 
-#finalPage .count-item span{
+/* ==========================================================
+   FINAL RESPONSIVE POLISH
+========================================================== */
 
-    font-size:2rem;
+/* Large Desktop */
 
-}
+@media (min-width:1600px){
 
-#finalPage .count-item small{
+    .page-wrapper{
 
-    font-size:.6rem;
+        max-width:1600px;
 
-}
-
-/* RSVP */
-
-#finalPage .rsvp-buttons{
-
-    bottom:4%;
+    }
 
 }
 
-#finalPage .rsvp-buttons button{
+/* Tablet */
 
-    width:210px;
+@media (max-width:1024px){
 
-    height:44px;
+    .page-wrapper{
 
-    font-size:15px;
+        width:100%;
+
+    }
 
 }
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .loader-content h1{
+
+        font-size:32px;
+
+    }
+
+    .loader-content p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+    .loader-content{
+
+        padding:24px;
+
+    }
+
+    .loader-content h1{
+
+        font-size:28px;
+
+    }
+
+    .loader-content p{
+
+        font-size:14px;
+
+    }
+
+    .flower{
+
+        font-size:56px;
+
+    }
+
+}
+
+/* Prevent horizontal scrolling */
+
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+/* Improve tap experience */
+
+button,
+.venue-button{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* Smooth transitions */
+
+button,
+.venue-button,
+.popup-card,
+#topButton{
+
+    transition:all .3s ease;
 
 }
