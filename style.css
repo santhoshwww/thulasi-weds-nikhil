@@ -359,7 +359,7 @@ button{
 
     font-family:'Cinzel',serif;
 
-    font-size:clamp(2rem,4.3vw,3.8rem);
+    font-size:clamp(1.5rem,3vw,2.8rem);
 
     font-weight:700;
 
@@ -375,7 +375,7 @@ button{
 
     margin-top:clamp(4px,.6vw,10px);
 
-    font-size:clamp(.65rem,.95vw,1rem);
+    font-size:clamp(0.55rem,0.8vw,0.85rem);
 
     font-weight:500;
 
