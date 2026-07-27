@@ -1,6 +1,11 @@
-/* ==========================================
+/* ==========================================================
+   WEDDING INVITATION
+   Responsive CSS
+========================================================== */
+
+/* ==========================================================
    RESET
-========================================== */
+========================================================== */
 
 *{
     margin:0;
@@ -13,46 +18,70 @@ html{
 }
 
 body{
-
+    font-family:'Poppins',sans-serif;
     background:#F8F2E9;
     color:#333;
     overflow-x:hidden;
-
-    font-family:'Poppins',sans-serif;
-
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
 }
 
-/* ==========================================
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+img{
+    display:block;
+    max-width:100%;
+    user-select:none;
+    pointer-events:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ==========================================================
    LOADER
-========================================== */
+========================================================== */
 
 #loader{
 
     position:fixed;
-
     inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     background:#F8F2E9;
 
-    display:flex;
+    z-index:99999;
 
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:9999;
-
-    transition:.8s;
+    transition:opacity .8s ease,
+               visibility .8s ease;
 
 }
 
 .loader-content{
 
+    width:min(90%,520px);
+
     text-align:center;
 
-    max-width:500px;
+    padding:2rem;
 
-    padding:30px;
+}
+
+.flower{
+
+    font-size:clamp(3rem,6vw,4.5rem);
+
+    animation:flowerFloat 2.6s ease-in-out infinite;
 
 }
 
@@ -60,9 +89,9 @@ body{
 
     margin-top:20px;
 
-    font-size:38px;
-
     font-family:'Cinzel',serif;
+
+    font-size:clamp(2rem,4vw,2.8rem);
 
     color:#7B2D26;
 
@@ -70,45 +99,37 @@ body{
 
 .loader-content p{
 
-    margin-top:20px;
-
-    line-height:1.8;
+    margin-top:18px;
 
     color:#666;
 
-}
+    line-height:1.8;
 
-.flower{
-
-    font-size:64px;
+    font-size:clamp(.95rem,1.2vw,1.05rem);
 
 }
 
 .loading-spinner{
 
-    width:55px;
+    width:58px;
+    height:58px;
 
-    height:55px;
+    margin:28px auto;
 
     border:4px solid #E3D7C6;
-
-    border-top:4px solid #B98B54;
+    border-top-color:#B17835;
 
     border-radius:50%;
-
-    margin:35px auto;
 
     animation:spin 1s linear infinite;
 
 }
 
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
 @keyframes spin{
-
-    from{
-
-        transform:rotate(0);
-
-    }
 
     to{
 
@@ -118,86 +139,194 @@ body{
 
 }
 
-/* ==========================================
-   INVITATION
-========================================== */
+@keyframes flowerFloat{
 
-#invitation{
+    0%,100%{
 
-    width:100%;
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
 
 }
 
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   INVITATION LAYOUT
+========================================================== */
+
+#invitation{
+    width:100%;
+}
+
+/* Every invitation image occupies one full section */
+
 .page{
 
-    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     width:100%;
 
     background:#F8F2E9;
 
+    overflow:hidden;
+
 }
 
-.page img{
+/* Responsive artboard */
+
+.page-wrapper{
+
+    position:relative;
+
+    width:min(100%,1600px);
+
+    margin:auto;
+
+}
+
+/* Invitation image */
+
+.page-wrapper img{
 
     width:100%;
+
+    height:auto;
 
     display:block;
 
 }
 
-/* ==========================================
+/* Smooth page appearance */
+
+.page-wrapper{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+/* Optional shadow for desktop */
+
+@media (min-width:1200px){
+
+.page-wrapper{
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.05);
+
+}
+
+}
+
+/* ==========================================================
    VENUE BUTTON
-========================================== */
+========================================================== */
 
 .venue-button{
 
     position:absolute;
 
     left:50%;
-
-    bottom:9%;
+    bottom:8.8%;
 
     transform:translateX(-50%);
 
-    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-width:clamp(160px,18vw,240px);
+    height:clamp(42px,3.6vw,56px);
+
+    padding:0 clamp(18px,2vw,32px);
 
     background:#B17835;
 
-    color:white;
+    color:#fff;
 
-    padding:14px 34px;
+    border-radius:999px;
 
-    border-radius:50px;
-
-    font-size:17px;
+    font-size:clamp(.85rem,1.1vw,1.05rem);
 
     font-weight:600;
 
-    transition:.3s;
+    letter-spacing:.3px;
 
-    box-shadow:0 12px 25px rgba(0,0,0,.2);
+    white-space:nowrap;
+
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
 
 }
 
 .venue-button:hover{
 
-    background:#8F6128;
+    background:#98692C;
 
-    transform:translateX(-50%) scale(1.05);
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:0 16px 30px rgba(0,0,0,.22);
 
 }
 
-/* ==========================================
+.venue-button:active{
+
+    transform:
+        translateX(-50%)
+        scale(.98);
+
+}
+
+.venue-button:focus-visible{
+
+    outline:3px solid rgba(177,120,53,.35);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
    COUNTDOWN
-========================================== */
+========================================================== */
 
 .countdown-box{
 
     position:absolute;
 
     top:25.1%;
-
     left:50%;
 
     transform:translateX(-50%);
@@ -207,6 +336,8 @@ body{
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
+
+    align-items:center;
 
 }
 
@@ -220,7 +351,7 @@ body{
 
     align-items:center;
 
-    height:72px;
+    min-height:clamp(70px,8vw,120px);
 
 }
 
@@ -228,7 +359,7 @@ body{
 
     font-family:'Cinzel',serif;
 
-    font-size:60px;
+    font-size:clamp(2rem,4.3vw,3.8rem);
 
     font-weight:700;
 
@@ -236,85 +367,117 @@ body{
 
     line-height:1;
 
+    font-variant-numeric:tabular-nums;
+
 }
 
 .count-item small{
 
-    margin-top:12px;
+    margin-top:clamp(4px,.6vw,10px);
 
-    font-size:17px;
+    font-size:clamp(.65rem,.95vw,1rem);
 
     font-weight:500;
 
-    letter-spacing:2px;
-
     color:#6A4B31;
+
+    letter-spacing:.18em;
 
     text-transform:uppercase;
 
 }
 
-/* ==========================================
+/* Optional subtle animation */
+
+.count-item span{
+
+    animation:countFade .8s ease;
+
+}
+
+@keyframes countFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
    RSVP BUTTONS
-========================================== */
+========================================================== */
 
 .rsvp-buttons{
 
     position:absolute;
 
     top:70%;
-
     left:70.2%;
 
     transform:translate(-50%,-50%);
 
     display:flex;
 
-    gap:18px;
+    gap:clamp(10px,1vw,18px);
 
 }
 
 .rsvp-buttons button{
 
-    width:210px;
-
-    height:50px;
+    width:clamp(150px,13vw,210px);
+    height:clamp(42px,3vw,50px);
 
     border:none;
 
-    border-radius:35px;
+    border-radius:999px;
 
-    font-size:17px;
+    font-size:clamp(.85rem,1vw,1rem);
 
     font-weight:600;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 
 }
 
 #yesBtn{
 
     background:#B17835;
-
-    color:white;
+    color:#fff;
 
 }
 
 #yesBtn:hover{
 
-    transform:translateY(-3px);
+    background:#98692C;
 
-    background:#966A30;
+    transform:
+        translateY(-3px)
+        scale(1.02);
 
 }
 
 #noBtn{
 
-    background:white;
+    background:#fff;
 
     color:#7B2D26;
 
@@ -322,24 +485,27 @@ body{
 
 #noBtn:hover{
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px)
+        scale(1.02);
 
 }
 
-/* ==========================================
+/* ==========================================================
    RSVP POPUP
-========================================== */
+========================================================== */
 
 .popup{
 
     position:fixed;
-    inset:0;
 
-    background:rgba(0,0,0,.55);
+    inset:0;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
+    background:rgba(0,0,0,.55);
 
     opacity:0;
     visibility:hidden;
@@ -361,14 +527,13 @@ body{
 
     position:relative;
 
-    width:90%;
-    max-width:500px;
+    width:min(90%,500px);
 
     background:#FFFDF9;
 
     border-radius:24px;
 
-    padding:45px 35px;
+    padding:clamp(28px,4vw,45px);
 
     text-align:center;
 
@@ -383,7 +548,7 @@ body{
     from{
 
         opacity:0;
-        transform:scale(.8);
+        transform:scale(.9);
 
     }
 
@@ -404,17 +569,17 @@ body{
 
     margin-bottom:20px;
 
-    font-size:30px;
+    font-size:clamp(1.5rem,2vw,2rem);
 
 }
 
 .popup-card p{
 
-    line-height:1.9;
+    line-height:1.8;
 
     color:#555;
 
-    font-size:17px;
+    font-size:clamp(.95rem,1vw,1.05rem);
 
 }
 
@@ -422,14 +587,14 @@ body{
 
     position:absolute;
 
-    top:15px;
-    right:20px;
+    top:12px;
+    right:18px;
 
-    font-size:34px;
-
-    cursor:pointer;
+    font-size:2rem;
 
     color:#999;
+
+    cursor:pointer;
 
     transition:.3s;
 
@@ -441,19 +606,19 @@ body{
 
 }
 
-/* ==========================================
+/* ==========================================================
    BACK TO TOP
-========================================== */
+========================================================== */
 
 #topButton{
 
     position:fixed;
 
-    right:25px;
-    bottom:25px;
+    right:20px;
+    bottom:20px;
 
-    width:52px;
-    height:52px;
+    width:clamp(46px,3vw,54px);
+    height:clamp(46px,3vw,54px);
 
     border:none;
 
@@ -461,17 +626,19 @@ body{
 
     background:#B17835;
 
-    color:white;
+    color:#fff;
 
-    font-size:24px;
+    font-size:clamp(1.1rem,1.5vw,1.4rem);
 
     cursor:pointer;
 
     display:none;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    box-shadow:0 10px 20px rgba(0,0,0,.22);
 
-    transition:.3s;
+    transition:
+        transform .3s ease,
+        background .3s ease;
 
     z-index:999;
 
@@ -479,339 +646,101 @@ body{
 
 #topButton:hover{
 
-    transform:translateY(-5px);
-
     background:#98692C;
 
-}
-
-/* ==========================================
-   IMAGE ENHANCEMENT
-========================================== */
-
-.page{
-
-    overflow:hidden;
+    transform:translateY(-4px);
 
 }
 
-.page img{
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
 
-    display:block;
+/* ---------- Tablets ---------- */
 
-    width:100%;
+@media (max-width:1024px){
 
-    height:auto;
+    .page-wrapper{
+        width:100%;
+    }
 
-    user-select:none;
+    .countdown-box{
+        width:76%;
+    }
 
-    pointer-events:none;
-
-}
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media(max-width:1024px){
-
-.scratch-container{
-
-    width:260px;
-
-    height:150px;
+    .rsvp-buttons{
+        left:68%;
+    }
 
 }
 
-.count-item{
+/* ---------- Mobile ---------- */
 
-    width:75px;
-    height:75px;
+@media (max-width:768px){
 
-}
+    .loader-content{
+        padding:1.5rem;
+    }
 
-.count-item span{
+    .countdown-box{
 
-    font-size:28px;
+        top:18.5%;
+        width:78%;
 
-    line-height:1;
+    }
 
-}
+    .rsvp-buttons{
 
-.rsvp-buttons{
+        left:50%;
+        top:74%;
 
-    gap:12px;
+        width:90%;
 
-}
+        flex-direction:column;
+        align-items:center;
 
-.rsvp-buttons button{
+    }
 
-    padding:13px 22px;
+    .venue-button{
 
-    font-size:15px;
+        bottom:8%;
 
-}
-
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:768px){
-
-.loader-content{
-
-    padding:20px;
+    }
 
 }
 
-.loader-content h1{
+/* ---------- Small Phones ---------- */
 
-    font-size:30px;
+@media (max-width:480px){
 
-}
+    .loader-content h1{
 
-.loader-content p{
+        font-size:1.7rem;
 
-    font-size:15px;
+    }
 
-}
+    .loader-content p{
 
-.scratch-container{
+        font-size:.9rem;
 
-    width:180px;
-    height:110px;
+    }
 
-    top:53%;
+    .flower{
 
-}
+        font-size:3rem;
 
-#scratch-result h2{
-
-    font-size:14px;
+    }
 
 }
 
-#scratch-result h3{
+/* ---------- Large Desktop ---------- */
 
-    font-size:18px;
+@media (min-width:1600px){
 
-}
+    body{
 
-#scratch-result h4{
+        background:#F3EEE5;
 
-    font-size:17px;
-
-}
-
-/* ==========================================
-   COUNTDOWN
-========================================== */
-
-.countdown-box{
-
-    position:absolute;
-
-    top:18.5%;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:77%;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-}
-
-.count-item{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    height:170px;
-
-    padding-top:8px;
-
-}
-
-.count-item span{
-
-    font-family:'Cinzel',serif;
-
-    font-size:58px;
-
-    font-weight:700;
-
-    color:#4E2B16;
-
-    line-height:1;
-
-}
-
-.count-item small{
-
-    margin-top:8px;
-
-    font-size:18px;
-
-    color:#6E4A2C;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-}
-
-.rsvp-buttons{
-
-    position:absolute;
-
-    top:74%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:88%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-.rsvp-buttons button{
-
-    width:240px;
-
-    height:48px;
-
-    font-size:15px;
-
-}
-
-.venue-button{
-
-    padding:11px 22px;
-
-    font-size:14px;
-
-}
-
-.popup-card{
-
-    padding:35px 25px;
-
-}
-
-.popup-card h2{
-
-    font-size:24px;
-
-}
-
-.popup-card p{
-
-    font-size:15px;
-
-}
-
-#topButton{
-
-    width:45px;
-    height:45px;
-
-    font-size:20px;
-
-    right:18px;
-    bottom:18px;
-
-}
-
-}
-
-/* ==========================================
-   SMALL PHONES
-========================================== */
-
-@media(max-width:480px){
-
-.flower{
-
-    font-size:48px;
-
-}
-
-.loader-content h1{
-
-    font-size:24px;
-
-}
-
-.loader-content p{
-
-    font-size:14px;
-
-}
-
-.count-item{
-
-    width:48px;
-    height:48px;
-
-}
-
-.count-item span{
-
-    font-size:64px;
-
-    line-height:1;
-
-}
-
-.count-item small{
-
-    margin-top:5px;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-
-}
-
-}
-
-/* ==========================================
-   DESKTOP
-========================================== */
-
-@media(min-width:1400px){
-
-body{
-
-    background:#F3EEE5;
-
-}
-
-.page{
-
-    max-width:1600px;
-
-    margin:auto;
-
-}
+    }
 
 }
