@@ -359,7 +359,7 @@ button{
 
     font-family:'Cinzel',serif;
 
-    font-size:clamp(1.5rem,3vw,2.8rem);
+    font-size:clamp(1.2rem,2.4vw,2.4rem);
 
     font-weight:700;
 
@@ -375,7 +375,7 @@ button{
 
     margin-top:clamp(4px,.6vw,10px);
 
-    font-size:clamp(0.55rem,0.8vw,0.85rem);
+    font-size:clamp(.45rem,.7vw,.75rem);
 
     font-weight:500;
 
@@ -674,36 +674,98 @@ button{
 
 }
 
-/* ---------- Mobile ---------- */
+/* ==========================================================
+   MOBILE
+========================================================== */
 
 @media (max-width:768px){
 
-    .loader-content{
-        padding:1.5rem;
-    }
+    /* Countdown */
 
     .countdown-box{
 
-        top:18.5%;
-        width:78%;
-
-    }
-
-    .rsvp-buttons{
-
+        top:19.8%;
         left:50%;
-        top:74%;
 
-        width:90%;
-
-        flex-direction:column;
-        align-items:center;
+        width:82%;
 
     }
+
+    .count-item span{
+
+        font-size:2.2rem;
+
+    }
+
+    .count-item small{
+
+        font-size:.68rem;
+
+        letter-spacing:1px;
+
+    }
+
+    /* Venue Button */
 
     .venue-button{
 
-        bottom:8%;
+        left:50%;
+        bottom:13%;
+
+        transform:translateX(-50%);
+
+        min-width:190px;
+
+        height:44px;
+
+        font-size:.9rem;
+
+    }
+
+    /* RSVP */
+
+    .rsvp-buttons{
+
+        position:absolute;
+
+        left:50%;
+        top:84%;
+
+        transform:translate(-50%,-50%);
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:10px;
+
+    }
+
+    .rsvp-buttons button{
+
+        width:230px;
+
+        height:48px;
+
+        font-size:.95rem;
+
+    }
+
+    /* Back To Top */
+
+    #topButton{
+
+        width:46px;
+
+        height:46px;
+
+        right:16px;
+
+        bottom:16px;
 
     }
 
