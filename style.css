@@ -334,19 +334,23 @@ body{
 
 .count-item span{
 
-    font-size:28px;
+    font-size:24px;
 
     font-weight:bold;
 
     color:#8D2E24;
 
+    line-height:1;
+
 }
 
 .count-item small{
 
-    margin-top:6px;
+    margin-top:8px;
 
     color:#555;
+
+    font-size:12px;
 
 }
 
@@ -360,7 +364,7 @@ body{
 
     left:50%;
 
-    bottom:8%;
+    bottom:12%;
 
     transform:translateX(-50%);
 
